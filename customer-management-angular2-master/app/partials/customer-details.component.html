@@ -1,0 +1,10 @@
+<div class="customer-wrapper">
+    <div class="customer-detail" *ngFor="let cust of customers">
+        <div class="customer-detail-title">{{cust.name}}</div>
+        <div class="customer-detail-body">
+            <p>{{cust.address}}</p>
+            <p>{{cust.orderCount}} Orders</p>
+        </div>        
+    </div>
+</div>
+

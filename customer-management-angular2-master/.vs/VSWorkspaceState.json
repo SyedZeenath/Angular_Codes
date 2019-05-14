@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\components",
+    "\\app\\partials",
+    "\\app\\services",
+    "\\app\\styles"
+  ],
+  "SelectedNode": "\\app\\components\\customers-orders.component.ts",
+  "PreviewInSolutionExplorer": false
+}

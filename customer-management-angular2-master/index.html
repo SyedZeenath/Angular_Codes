@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <base href="/">
+    <title>Customer Management App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--- Loading Stylesheets -->
+    <link href="app.css" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet">
+
+    <!-- Load Libraries -->
+    <!--- Polyfills for older Browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!--- Configure Systems -->
+    <script src="systemjs.config.js"></script>
+    <script>
+                System.import("app").catch(function(err){console.log(err);});
+     </script>
+</head>
+
+<!--- Display the Application -->
+
+<body>
+        <customer-app>Loading ...</customer-app>
+</body>
+
+</html>

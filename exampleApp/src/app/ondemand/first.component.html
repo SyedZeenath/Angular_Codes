@@ -1,0 +1,39 @@
+
+<!-- L 29-15. The first.component.html File in the exampleApp/app/ondemand Folder
+ -->
+<!-- 
+ <div class="bg-primary p-a-1">
+ There are
+ <span class="strong"> {{getProducts().length}} </span>
+ products
+</div>
+
+ -->
+
+
+<!-- L 29-18. Binding to a Property in the first.component.html File
+ -->
+ <div class="bg-primary p-a-1" [class.bg-success]="highlighted">
+ There are
+ <span class="strong"> {{getProducts().length}} </span>
+ products
+</div>
+
+<!-- Events can be triggered in unit tests through the triggerEventHandler method defined by the
+DebugElement class, as shown in L 29-19 -->
+
+
+
+
+
+
+
+<!-- 
+
+<div class="bg-primary p-a-1" [class.bg-success]="highlighted">
+    There are 
+        <span class="strong"> {{getProducts().length}} </span> 
+    products
+</div>
+
+ -->

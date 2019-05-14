@@ -1,0 +1,951 @@
+<!-- Listing 15-1. Preparing the Template in the template.html File-->
+<!-- <div class="col-xs-6">
+ <table class="table table-sm table-bordered table-striped">
+ <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+ <tr *ngFor="let item of getProducts(); let i = index">
+ <td>{{i + 1}}</td>
+ <td>{{item.name}}</td>
+ <td>{{item.category}}</td>
+ <td>{{item.price}}</td>
+ </tr>
+ </table>
+</div>  -->
+
+
+
+
+<!-- <style>
+ input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+ input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+ <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+ <div class="form-group" *ngFor="let control of form.productControls">
+ <label>{{control.label}}</label>
+ <input class="form-control"
+ [(ngModel)]="newProduct[control.modelProperty]"
+ name="{{control.modelProperty}}"
+ formControlName="{{control.modelProperty}}" />
+ <ul class="text-danger list-unstyled"
+ *ngIf="(formSubmitted || control.dirty) && control.invalid">
+ <li *ngFor="let error of control.getValidationMessages()">
+ {{error}}
+ </li>
+ </ul>
+ </div>
+ <button class="btn btn-primary" type="submit"
+ [disabled]="formSubmitted && !form.valid"
+ [class.btn-secondary]="formSubmitted && form.invalid">
+
+ Create
+ </button>
+ </form>
+</div>
+
+
+<div class="col-xs-6">
+
+         <table class="table table-sm table-bordered table-striped">
+
+         <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+
+         <tr *ngFor="let item of getProducts(); let i = index">
+                 <td>{{i + 1}}</td>
+                 <td>{{item.name}}</td>
+                 <td>{{item.category}}</td>
+                 <td>{{item.price}}</td>
+         </tr>
+         </table>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Listing 15-4. Adding a Directive Attribute in the template.html File -->
+<!-- <tr *ngFor="let item of getProducts(); let i = index" pa-attr> -->
+<!-- Applying a Custom Directive
+There are two steps to apply a custom directive. The first is to update the template so that there are one or
+more elements that match the selector that the directive uses. In the case of the example directive, this
+means adding the pa-attr attribute to an element, as shown in Listing 15-4.
+ -->
+
+<!-- 
+<style>
+ input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+ input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+ <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+ <div class="form-group" *ngFor="let control of form.productControls">
+ <label>{{control.label}}</label>
+ <input class="form-control"
+ [(ngModel)]="newProduct[control.modelProperty]"
+ name="{{control.modelProperty}}"
+ formControlName="{{control.modelProperty}}" />
+ <ul class="text-danger list-unstyled"
+ *ngIf="(formSubmitted || control.dirty) && control.invalid">
+ <li *ngFor="let error of control.getValidationMessages()">
+ {{error}}
+ </li>
+ </ul>
+ </div>
+ <button class="btn btn-primary" type="submit"
+ [disabled]="formSubmitted && !form.valid"
+ [class.btn-secondary]="formSubmitted && form.invalid">
+
+ Create
+ </button>
+ </form>
+</div>
+
+
+<div class="col-xs-6">
+
+         <table class="table table-sm table-bordered table-striped">
+
+         <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+
+          <tr *ngFor="let item of getProducts(); let i = index" pa-attr>
+                 <td>{{i + 1}}</td>
+                 <td>{{item.name}}</td>
+                 <td>{{item.category}}</td>
+                 <td>{{item.price}}</td>
+         </tr>
+         </table>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Listing 15-6. Adding Attributes in the template.html File -->
+<!-- <td pa-attr pa-attr-class="bg-warning">{{item.category}}</td>
+<td pa-attr pa-attr-class="bg-info">{{item.price}}</td>
+Reading Host Element Attributes
+The simplest way to make a directive more useful is to configure it using attributes applied to the host
+element, which allows each instance of the directive to be provided with its own configuration information
+and to adapt its behavior accordingly.
+As an example, Listing 15-6 applies the directive to some of the td elements in the template table and
+adds an attribute that specifies the class that the host element should be added to. The directive’s selector
+means that it will match any element that has the pa-attr attribute, regardless of the tag type, and will work
+as well on td elements as it does on tr elements.
+ -->
+
+
+
+<!-- <style>
+  input.ng-dirty.ng-invalid {
+    border: 2px solid #ff0000
+  }
+
+  input.ng-dirty.ng-valid {
+    border: 2px solid #6bc502
+  }
+
+</style>
+
+<div class="col-xs-6">
+  <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+    <div class="form-group" *ngFor="let control of form.productControls">
+      <label>{{control.label}}</label>
+      <input class="form-control" [(ngModel)]="newProduct[control.modelProperty]" name="{{control.modelProperty}}" formControlName="{{control.modelProperty}}"
+      />
+      <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+        <li *ngFor="let error of control.getValidationMessages()">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="formSubmitted && !form.valid" [class.btn-secondary]="formSubmitted && form.invalid">
+
+      Create
+    </button>
+  </form>
+</div>
+
+
+<div class="col-xs-6">
+
+
+  <table class="table table-sm table-bordered table-striped">
+
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>
+
+    <tr *ngFor="let item of getProducts(); let i = index" pa-attr>
+      <td>{{i + 1}}</td>
+      <td pa-attr pa-attr-class="bg-warning">{{item.category}}</td>
+      <!-- pa-attr-class: is a support attribute -->
+<!-- <td pa-attr pa-attr-class="bg-info"> {{item.price}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+  </table>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Listing 15-9. Applying a Directive in the template.html File -->
+<!-- There is no visual change in the result produced by this example, but it has simplified the way that the
+directive is applied in the HTML template. -->
+
+<!-- <style>
+ input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+ input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+ <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+ <div class="form-group" *ngFor="let control of form.productControls">
+ <label>{{control.label}}</label>
+ <input class="form-control"
+ [(ngModel)]="newProduct[control.modelProperty]"
+ name="{{control.modelProperty}}"
+ formControlName="{{control.modelProperty}}" />
+ <ul class="text-danger list-unstyled"
+ *ngIf="(formSubmitted || control.dirty) && control.invalid">
+ <li *ngFor="let error of control.getValidationMessages()">
+ {{error}}
+ </li>
+ </ul>
+ </div>
+ <button class="btn btn-primary" type="submit"
+ [disabled]="formSubmitted && !form.valid"
+ [class.btn-secondary]="formSubmitted && form.invalid">
+
+ Create
+ </button>
+ </form>
+</div>
+
+
+<div class="col-xs-6">
+
+
+         <table class="table table-sm table-bordered table-striped">
+
+         <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+
+          <tr *ngFor="let item of getProducts(); let i = index" pa-attr> 
+                 <td>{{i + 1}}</td>
+                 <td pa-attr="bg-warning">{{item.category}}</td>
+                 <td pa-attr="bg-info">{{item.price}}</td>
+                 <td>{{item.price}}</td>
+         </tr>
+         </table>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Listing 15-10. Using Expressions in the template.html File
+ -->
+<!-- Creating Data-Bound Input Properties
+The main limitation of reading attributes with @Attribute is that the values are static. The real power
+in Angular directives comes through support for expressions that are updated to reflect changes in the
+application state and that can respond by changing the host element.
+Directives receive expressions using data-bound input properties, also known as input properties or,
+simply, inputs. Listing 15-10 changes the application’s template so that the pa-attr attributes
+ applied to the
+tr and td elements contain expressions, rather than just static class names.
+ -->
+
+<!-- 
+
+<style>
+  input.ng-dirty.ng-invalid {
+    border: 2px solid #ff0000
+  }
+
+  input.ng-dirty.ng-valid {
+    border: 2px solid #6bc502
+  }
+
+</style>
+
+<div class="col-xs-6">
+  <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+    <div class="form-group" *ngFor="let control of form.productControls">
+      <label>{{control.label}}</label>
+      <input class="form-control" [(ngModel)]="newProduct[control.modelProperty]" name="{{control.modelProperty}}" formControlName="{{control.modelProperty}}"
+      />
+      <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+        <li *ngFor="let error of control.getValidationMessages()">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="formSubmitted && !form.valid" [class.btn-secondary]="formSubmitted && form.invalid">
+
+      Create
+    </button>
+  </form>
+</div>
+
+
+<div class="col-xs-6">
+
+
+  <table class="table table-sm table-bordered table-striped">
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let item of getProducts(); let i = index" [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'">
+      <td>{{i + 1}}</td>
+      <td>{{item.name}}</td>
+      <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+        {{item.category}}
+      </td>
+      <td [pa-attr]="'bg-info'">{{item.price}}</td>
+    </tr>
+  </table>
+</div>
+ -->
+
+
+
+
+
+
+
+<!-- Listing 15-14. Binding to a Custom Event in the template.html File
+Binding to a Custom Event
+Angular makes it easy to bind to custom events in templates by using the same binding syntax that is used
+for built-in events, which was described in Chapter 14. Listing 15-14 adds the pa-product attribute to the
+tr element in the template to provide the directive with its Product object and adds a binding for the pacategory
+event. -->
+
+<!-- The term $event is used to access the value the directive passed to the EventEmitter.emit method.
+That means $event will be a string value containing the product category in this example. The value
+received from the event is assigned to the component’s newProduct.category property, which causes the
+data binding for one of the input elements to be updated, meaning that clicking a row in the table displays
+the product’s category in the form, as shown in Figure 15-6. -->
+
+
+
+<!-- <style>
+  input.ng-dirty.ng-invalid {
+    border: 2px solid #ff0000
+  }
+
+  input.ng-dirty.ng-valid {
+    border: 2px solid #6bc502
+  }
+
+</style>
+
+<div class="col-xs-6">
+  <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+    <div class="form-group" *ngFor="let control of form.productControls">
+      <label>{{control.label}}</label>
+      <input class="form-control" [(ngModel)]="newProduct[control.modelProperty]" name="{{control.modelProperty}}" formControlName="{{control.modelProperty}}"
+      />
+      <ul class="text-danger list-unstyled" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+        <li *ngFor="let error of control.getValidationMessages()">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="formSubmitted && !form.valid" [class.btn-secondary]="formSubmitted && form.invalid">
+
+      Create
+    </button>
+  </form>
+</div>
+
+
+<div class="col-xs-6">
+
+
+  <table class="table table-sm table-bordered table-striped">
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let item of getProducts(); let i = index" [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+      [pa-product]="item" (pa-category)="newProduct.category=$event">
+      <td>{{i + 1}}</td>
+      <td>{{item.name}}</td>
+      <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+        {{item.category}}
+      </td>
+      <td [pa-attr]="'bg-info'">{{item.price}}</td>
+    </tr>
+  </table>
+</div>
+
+ -->
+
+
+
+
+
+
+
+
+<!-- 
+Listing 15-16. Applying a Directive in the template.html File
+Creating a Two-Way Binding on the Host Element
+Angular provides special support for creating directives that support two-way bindings so they can be
+used with the banana-in-a-box bracket style that ngModel uses and can bind to a model property in both
+directions.
+The two-way binding feature relies on a naming convention. To demonstrate how it works, Listing 15-16
+adds some new elements and bindings to the template.html file -->
+
+<!-- 
+I am going to create a directive that supports two one-way bindings. The binding whose target is
+paModel will be updated when the value of the newProduct.name property changes, which provides a flow of
+data from the application to the directive and will be used to update the contents of the input element. The
+custom event, paModelChange, will be triggered when the user changes the contents of the input element
+and will provide a flow of data from the directive to the rest of the application.
+To implement the directive, I added a file called twoway.directive.ts to the app folder and used it to
+define the directive shown in Listing 15-17. -->
+
+<!-- 
+<style>
+ input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+ input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+ <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+ <div class="form-group" *ngFor="let control of form.productControls">
+ <label>{{control.label}}</label>
+ <input class="form-control"
+ [(ngModel)]="newProduct[control.modelProperty]"
+ name="{{control.modelProperty}}"
+ formControlName="{{control.modelProperty}}" />
+ <ul class="text-danger list-unstyled"
+ *ngIf="(formSubmitted || control.dirty) && control.invalid">
+ <li *ngFor="let error of control.getValidationMessages()">
+ {{error}}
+ </li>
+ </ul>
+ </div>
+ <button class="btn btn-primary" type="submit"
+ [disabled]="formSubmitted && !form.valid"
+ [class.btn-secondary]="formSubmitted && form.invalid">
+
+ Create
+ </button>
+ </form>
+</div>
+
+
+<<div class="col-xs-6">
+ <div class="form-group bg-info p-a-1">
+ <label>Name:</label>
+ <input class="bg-primary" [paModel]="newProduct.name"
+ (paModelChange)="newProduct.name=$event" />
+ </div>
+     <table class="table table-sm table-bordered table-striped">
+         <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+         <tr *ngFor="let item of getProducts(); let i = index"
+         [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+         [pa-product]="item" (pa-category)="newProduct.category=$event">
+         <td>{{i + 1}}</td>
+         <td>{{item.name}}</td>
+         <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+         {{item.category}}
+         </td>
+         <td [pa-attr]="'bg-info'">{{item.price}}</td>
+         </tr>
+     </table>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Listing 15-19. Simplifying the Bindings in the template.html File
+The final step is to simplify the bindings and apply the banana-in-a-box style of brackets, as shown in
+Listing 15-19. -->
+
+<!-- When Angular encounters the [()] brackets, it expands the binding to match the format used in
+Listing 15-16, targeting the paModel input property and setting up the paModelChange event. As long as
+a directive exposes these to Angular, it can be targeted using the banana-in-a-box brackets, producing a
+simpler template syntax -->
+
+<!-- 
+<style>
+ input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+ input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+ <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+ <div class="form-group" *ngFor="let control of form.productControls">
+ <label>{{control.label}}</label>
+ <input class="form-control"
+ [(ngModel)]="newProduct[control.modelProperty]"
+ name="{{control.modelProperty}}"
+ formControlName="{{control.modelProperty}}" />
+ <ul class="text-danger list-unstyled"
+ *ngIf="(formSubmitted || control.dirty) && control.invalid">
+ <li *ngFor="let error of control.getValidationMessages()">
+ {{error}}
+ </li>
+ </ul>
+ </div>
+ <button class="btn btn-primary" type="submit"
+ [disabled]="formSubmitted && !form.valid"
+ [class.btn-secondary]="formSubmitted && form.invalid">
+
+ Create
+ </button>
+ </form>
+</div>
+
+
+
+
+<div class="col-xs-6">
+ <div class="form-group bg-info p-a-1">
+ <label>Name:</label>
+ <input class="bg-primary" [(paModel)]="newProduct.name" />
+ </div>
+     <table class="table table-sm table-bordered table-striped">
+         <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+         <tr *ngFor="let item of getProducts(); let i = index"
+         [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+         [pa-product]="item" (pa-category)="newProduct.category=$event">
+         <td>{{i + 1}}</td>
+         <td>{{item.name}}</td>
+         <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+         {{item.category}}
+         </td>
+         <td [pa-attr]="'bg-info'">{{item.price}}</td>
+         </tr>
+     </table>
+</div>
+ -->
+
+
+
+
+
+<!-- Listing 15-21. Simplifying the Bindings in the template.html File
+ -->
+<!-- The template variable is called paModel, and its value is the name used in the directive’s exportAs
+property.
+
+You don’t have to use the same names for the variable and the directive, but it does help to make the
+source of the functionality clear. -->
+
+<style>
+ input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+ input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+ <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+ <div class="form-group" *ngFor="let control of form.productControls">
+ <label>{{control.label}}</label>
+ <input class="form-control"
+ [(ngModel)]="newProduct[control.modelProperty]"
+ name="{{control.modelProperty}}"
+ formControlName="{{control.modelProperty}}" />
+ <ul class="text-danger list-unstyled"
+ *ngIf="(formSubmitted || control.dirty) && control.invalid">
+ <li *ngFor="let error of control.getValidationMessages()">
+ {{error}}
+ </li>
+ </ul>
+ </div>
+ <button class="btn btn-primary" type="submit"
+ [disabled]="formSubmitted && !form.valid"
+ [class.btn-secondary]="formSubmitted && form.invalid">
+
+ Create
+ </button>
+ </form>
+</div>
+
+
+
+
+<div class="col-xs-6">
+ <div class="form-group bg-info p-a-1">
+ <label>Name:</label>
+    <input class="bg-primary" [(paModel)]="newProduct.name" #paModel="paModel" />
+ <div class="bg-primary">Direction: {{paModel.direction}}</div> 
+
+  </div>
+     <table class="table table-sm table-bordered table-striped">
+         <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+         <tr *ngFor="let item of getProducts(); let i = index"
+         [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+         [pa-product]="item" (pa-category)="newProduct.category=$event">
+         <td>{{i + 1}}</td>
+         <td>{{item.name}}</td>
+         <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+         {{item.category}}
+         </td>
+         <td [pa-attr]="'bg-info'">{{item.price}}</td>
+         </tr>
+     </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<style>
+    input.ng-dirty.ng-invalid { border: 2px solid #ff0000 }
+    input.ng-dirty.ng-valid { border: 2px solid #6bc502 }
+</style>
+
+<div class="col-xs-6">
+    <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+        <div class="form-group" *ngFor="let control of form.productControls">
+            <label>{{control.label}}</label>
+            <input class="form-control" 
+                [(ngModel)]="newProduct[control.modelProperty]"
+                name="{{control.modelProperty}}"
+                formControlName="{{control.modelProperty}}" />
+            <ul class="text-danger list-unstyled"
+                    *ngIf="(formSubmitted || control.dirty) && control.invalid">
+                <li *ngFor="let error of control.getValidationMessages()">
+                    {{error}}
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-primary" type="submit"
+            [disabled]="formSubmitted && !form.valid"
+            [class.btn-secondary]="formSubmitted && form.invalid">
+                Create
+        </button>
+    </form>
+</div>
+
+<div class="col-xs-6">
+
+    
+    <div class="form-group bg-info p-a-1">
+        <label>Name:</label>
+        <input class="bg-primary" [(paModel)]="newProduct.name" #paModel="paModel" />
+        <div class="bg-primary">Direction: {{paModel.direction}}</div>
+    </div>
+
+
+
+<table class="table table-sm table-bordered table-striped">
+    <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+    <tr *ngFor="let item of getProducts(); let i = index"
+            [pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+            [pa-product]="item" (pa-category)="newProduct.category=$event">
+        <td>{{i + 1}}</td>
+        <td>{{item.name}}</td>
+        <td [pa-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+            {{item.category}}
+        </td>
+        <td [pa-attr]="'bg-info'">{{item.price}}</td>
+    </tr>
+</table>
+
+</div>
+ -->

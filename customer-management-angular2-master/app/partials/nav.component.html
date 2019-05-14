@@ -1,0 +1,16 @@
+<nav class="nav navbar">
+    <div class="nav-title">
+        <p class="title">{{title}}</p>
+        <a><img src="" alt=""></a>
+    </div>
+    <ul class="nav-section pull-right">
+        <li class="nav-item"><a routerLink="/customers" routerLinkActive="active">Customers</a></li>
+        <li class="nav-item"><a routerLink="/orders" routerLinkActive="active">Orders</a></li>
+        <li class="nav-item"><a>About</a></li>
+        <li class="nav-item"><a>Login</a></li>
+    </ul>
+</nav>
+<!-- Router Views Go Here -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

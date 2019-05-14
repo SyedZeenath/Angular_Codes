@@ -1,0 +1,30 @@
+.orders-wrapper .orders-table{
+    border : 1px solid #e9eaee;
+    width: 100%;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+
+.orders-wrapper h2{
+    color: #1868b3;
+    margin-bottom: 0.4em;
+    font-size: 1.2em
+}
+
+.orders-wrapper .orders-table thead{
+    background-color: #1868b3;
+    padding: 0.5em; 
+    text-align: left;
+    color: #fff;
+}
+
+.orders-wrapper .orders-table thead th,
+.orders-wrapper .orders-table tbody td{
+    padding: 0.5em;
+    border: 1px solid #e9eaee;
+    width: 20%;
+}
+
+.orders-wrapper .orders-table tbody tr:nth-child(even){
+    background-color: #e9f3f9;
+}
